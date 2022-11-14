@@ -91,10 +91,32 @@ const every = async (req, res) => {
 
 };
 
+// fill()
+const fill = async (req, res) => {
+    /** Fill all the elements with a value */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // fruits.fill("Kiwi");
+
+    /** Fill the last two elements */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // fruits.fill("Kiwi", 2, 4);
+
+    /** Fill the last two elements */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango", "fruit5", "fruit6"];
+    // fruits.fill("Kiwi", 4, 6);
+
+    /** Fill the last three elements */
+    const fruits = ["Banana", "Orange", "Apple", "Mango", "fruit5", "fruit6"];
+    fruits.fill("Kiwi", 3, 6);
+
+    res.status(200).json(fruits);
+};
+
 module.exports = {
     concat,
     constructor,
     copyWithin,
     entries,
-    every
+    every,
+    fill
 };
