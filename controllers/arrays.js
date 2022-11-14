@@ -132,6 +132,20 @@ const filter = async (req, res) => {
     res.status(200).json(result);
 };
 
+// find()
+const find = async (req, res) => {
+    /** Find the value of the first element with a value over 18 */
+    const ages = [3, 10, 18, 19, 20];
+
+    const checkAge = (age) => {
+        return age > 18;
+    };
+
+    const result = ages.find(checkAge);
+
+    res.status(200).json(result);
+}
+
 module.exports = {
     concat,
     constructor,
@@ -139,5 +153,6 @@ module.exports = {
     entries,
     every,
     fill,
-    filter
+    filter,
+    find
 };
