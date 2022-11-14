@@ -158,6 +158,41 @@ const findIndex = async (req, res) => {
     res.status(200).json(result);
 };
 
+// forEach()
+const forEach = async (req, res) => {
+    /** *******Calls a function for each element in fruits******* */
+    // let text = "";
+    // const fruits = ["apple", "orange", "cherry"];
+
+    // const myFunction = (item, index) => {
+    //     text += index + ":" + item + " || "; 
+    // };    
+    // fruits.forEach(myFunction);
+    // // console.log('text: ', text);
+    // res.status(200).json(text)
+
+    
+    /** *******Compute the sum******* */
+    // let sum = 0;
+    // const numbers = [65, 44, 12, 4];
+
+    // const myFunction = (item) => {
+    //     sum += item;
+    // };
+    // numbers.forEach(myFunction);
+    // res.status(200).json(sum);
+
+
+    /** *******Multiply each element******* */
+    const numbers = [65, 44, 12, 4];
+
+    const myFunction = (item, index, arr) => {
+        arr[index] = item * 10;
+    };
+    numbers.forEach(myFunction)
+    res.status(200).json(numbers);
+};
+
 module.exports = {
     concat,
     constructor,
@@ -167,5 +202,6 @@ module.exports = {
     fill,
     filter,
     find,
-    findIndex
+    findIndex,
+    forEach
 };
