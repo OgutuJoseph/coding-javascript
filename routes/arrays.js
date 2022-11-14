@@ -4,7 +4,12 @@ const {
     constructor,
     copyWithin,
     entries,
-    every
+    every,
+    fill,
+    filter,
+    find,
+    findIndex,
+    forEach
 } = require('../controllers/arrays');
 
 // concat()
@@ -13,5 +18,10 @@ router.get('/constructor', constructor);
 router.get('/copyWithin', copyWithin);
 router.get('/entries', entries);
 router.get('/every', every)
+router.get('/fill', fill);
+router.get('/filter', filter);
+router.get('/find', find);
+router.get('/findIndex', findIndex);
+router.get('/forEach', forEach)
 
 module.exports = router;

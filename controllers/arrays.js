@@ -91,10 +91,117 @@ const every = async (req, res) => {
 
 };
 
+// fill()
+const fill = async (req, res) => {
+    /** Fill all the elements with a value */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // fruits.fill("Kiwi");
+
+    /** Fill the last two elements */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // fruits.fill("Kiwi", 2, 4);
+
+    /** Fill the last two elements */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango", "fruit5", "fruit6"];
+    // fruits.fill("Kiwi", 4, 6);
+
+    /** Fill the last three elements */
+    const fruits = ["Banana", "Orange", "Apple", "Mango", "fruit5", "fruit6"];
+    fruits.fill("Kiwi", 3, 6);
+
+    res.status(200).json(fruits);
+};
+
+// filter()
+const filter = async (req, res) => {
+    /** Return an array of all values in ages[] that are 18 or over */
+    const ages = [32, 33, 16, 40];
+
+    /** !!works!! */
+    // const result = ages.filter(checkAdult);
+    // function checkAdult(age) {
+    //     return age >= 18;
+    // }
+
+    /** !!alternative implementation!! */
+    const checkAdult = (age) => {
+        return age >= 18;
+    };
+    const result = ages.filter(checkAdult);
+
+    res.status(200).json(result);
+};
+
+// find()
+const find = async (req, res) => {
+    /** Find the value of the FIRST element with a value over 18 */
+    const ages = [3, 10, 18, 19, 20];
+
+    const checkAge = (age) => {
+        return age > 18;
+    };
+    const result = ages.find(checkAge);
+
+    res.status(200).json(result);
+};
+
+// findIndex()
+const findIndex = async (req, res) => {
+    /** Find the FIRST element with a value over 18 */
+    const ages = [3, 10, 17, 18, 20];
+
+    const checkAge = (age) => {
+        return age > 18;
+    };
+    const result = ages.findIndex(checkAge);
+
+    res.status(200).json(result);
+};
+
+// forEach()
+const forEach = async (req, res) => {
+    /** *******Calls a function for each element in fruits******* */
+    // let text = "";
+    // const fruits = ["apple", "orange", "cherry"];
+
+    // const myFunction = (item, index) => {
+    //     text += index + ":" + item + " || "; 
+    // };    
+    // fruits.forEach(myFunction);
+    // // console.log('text: ', text);
+    // res.status(200).json(text)
+
+    
+    /** *******Compute the sum******* */
+    // let sum = 0;
+    // const numbers = [65, 44, 12, 4];
+
+    // const myFunction = (item) => {
+    //     sum += item;
+    // };
+    // numbers.forEach(myFunction);
+    // res.status(200).json(sum);
+
+
+    /** *******Multiply each element******* */
+    const numbers = [65, 44, 12, 4];
+
+    const myFunction = (item, index, arr) => {
+        arr[index] = item * 10;
+    };
+    numbers.forEach(myFunction)
+    res.status(200).json(numbers);
+};
+
 module.exports = {
     concat,
     constructor,
     copyWithin,
     entries,
-    every
+    every,
+    fill,
+    filter,
+    find,
+    findIndex,
+    forEach
 };
