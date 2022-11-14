@@ -5,7 +5,8 @@ const {
     copyWithin,
     entries,
     every,
-    fill
+    fill,
+    filter
 } = require('../controllers/arrays');
 
 // concat()
@@ -15,5 +16,6 @@ router.get('/copyWithin', copyWithin);
 router.get('/entries', entries);
 router.get('/every', every)
 router.get('/fill', fill);
+router.get('/filter', filter);
 
 module.exports = router;

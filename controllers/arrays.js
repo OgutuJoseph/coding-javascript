@@ -112,11 +112,32 @@ const fill = async (req, res) => {
     res.status(200).json(fruits);
 };
 
+// filter()
+const filter = async (req, res) => {
+    /** Return an array of all values in ages[] that are 18 or over */
+    const ages = [32, 33, 16, 40];
+
+    /** !!works!! */
+    // const result = ages.filter(checkAdult);
+    // function checkAdult(age) {
+    //     return age >= 18;
+    // }
+
+    /** !!alternative implementation!! */
+    const checkAdult = (age) => {
+        return age >= 18;
+    }
+    const result = ages.filter(checkAdult);
+
+    res.status(200).json(result);
+};
+
 module.exports = {
     concat,
     constructor,
     copyWithin,
     entries,
     every,
-    fill
+    fill,
+    filter
 };
