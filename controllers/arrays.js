@@ -68,9 +68,33 @@ const entries = async (req, res) => {
     }
 };
 
+// every()
+const every = async (req, res) => {
+    /** Check if all values in ages[] are over 18 */
+    const ages = [32, 33, 25, 40];
+
+    // ages.every(checkAge)
+    // function checkAge(age) {
+    //     return age > 18;
+    // }
+
+    const checkAge = (age) => age > 18 //dont use parentheses here
+    
+    let result;
+    if (ages.every(checkAge)){
+        result = 'all ages are greater than 18';
+    } else {
+        result = 'not all ages are greater than 18';
+    }
+
+    res.status(200).json(result);
+
+};
+
 module.exports = {
     concat,
     constructor,
     copyWithin,
-    entries
+    entries,
+    every
 };
