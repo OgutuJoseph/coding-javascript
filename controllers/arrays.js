@@ -1,7 +1,7 @@
 /** controller methods */
 
 // concat()
-const concat = async (req, res, next) => {
+const concat = async (req, res) => {
     /** Join two arrays */
     // const arr1 = ["Cecilie", "Lone"];
     // const arr2 = ["Emil", "Tobias", "Linus"];
@@ -28,7 +28,7 @@ const concat = async (req, res, next) => {
 };
 
 // constructor
-const constructor = async (req, res, next) => {
+const constructor = async (req, res) => {
     const fruits = ["Banana", "Orange", "Apple", "Mango"];
     let text = fruits.constructor;
 
@@ -37,7 +37,7 @@ const constructor = async (req, res, next) => {
 };
 
 // copyWithin()
-const copyWithin = async (req, res, next) => { 
+const copyWithin = async (req, res) => { 
     /** Copy the first two array elements to the last two array elements */
     // const fruits = ["Banana", "Orange", "Apple", "Mango"];
     // fruits.copyWithin(2, 0);
@@ -57,8 +57,20 @@ const copyWithin = async (req, res, next) => {
     res.status(200).json(fruits);
 };
 
+// entries()
+const entries = async (req, res) => {
+    /** Create an Array Iterator, and then iterate over the key/value pairs */
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    const f = fruits.entries();
+
+    for (let x of f) {
+        console.log('x', x);
+    }
+};
+
 module.exports = {
     concat,
     constructor,
-    copyWithin
+    copyWithin,
+    entries
 };
