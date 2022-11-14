@@ -126,7 +126,7 @@ const filter = async (req, res) => {
     /** !!alternative implementation!! */
     const checkAdult = (age) => {
         return age >= 18;
-    }
+    };
     const result = ages.filter(checkAdult);
 
     res.status(200).json(result);
@@ -134,17 +134,29 @@ const filter = async (req, res) => {
 
 // find()
 const find = async (req, res) => {
-    /** Find the value of the first element with a value over 18 */
+    /** Find the value of the FIRST element with a value over 18 */
     const ages = [3, 10, 18, 19, 20];
 
     const checkAge = (age) => {
         return age > 18;
     };
-
     const result = ages.find(checkAge);
 
     res.status(200).json(result);
-}
+};
+
+// findIndex()
+const findIndex = async (req, res) => {
+    /** Find the FIRST element with a value over 18 */
+    const ages = [3, 10, 17, 18, 20];
+
+    const checkAge = (age) => {
+        return age > 18;
+    };
+    const result = ages.findIndex(checkAge);
+
+    res.status(200).json(result);
+};
 
 module.exports = {
     concat,
@@ -154,5 +166,6 @@ module.exports = {
     every,
     fill,
     filter,
-    find
+    find,
+    findIndex
 };

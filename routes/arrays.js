@@ -7,7 +7,8 @@ const {
     every,
     fill,
     filter,
-    find
+    find,
+    findIndex
 } = require('../controllers/arrays');
 
 // concat()
@@ -18,6 +19,7 @@ router.get('/entries', entries);
 router.get('/every', every)
 router.get('/fill', fill);
 router.get('/filter', filter);
-router.get('/find', find)
+router.get('/find', find);
+router.get('/findIndex', findIndex);
 
 module.exports = router;
