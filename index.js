@@ -8,7 +8,7 @@ dotenv.config();
 app.use(express.json());
 
 /** routes */
-// routes
+app.use('/arrays', require('./routes/arrays'));
 
 const port = process.env.PORT;
 
