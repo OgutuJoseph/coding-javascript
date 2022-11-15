@@ -291,6 +291,23 @@ const length = async (req, res) => {
     res.status(200).json(length);
 };
 
+// map()
+const map = async (req, res) => {
+    /** Return a new array with the square root of all element values */
+    // const numbers = [4, 9, 16, 25];
+    // const newArr = numbers.map(Math.sqrt);
+    // res.status(200).json(newArr);
+    
+    /** Multiply all the values in an array with 10 */
+    const numbers = [65, 44, 12, 4];
+
+    const myFunction = (num) => {
+        return num * 10;
+    }
+    const newArr = numbers.map(myFunction)
+    res.status(200).json(newArr);
+};
+
 module.exports = {
     concat,
     constructor,
@@ -308,5 +325,6 @@ module.exports = {
     join,
     keys,
     lastIndexOf,
-    length
+    length,
+    map
 };

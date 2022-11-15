@@ -16,7 +16,8 @@ const {
     join,
     keys,
     lastIndexOf,
-    length
+    length,
+    map
 } = require('../controllers/arrays');
 
 // concat()
@@ -37,5 +38,6 @@ router.get('/join', join);
 router.get('/keys', keys);
 router.get('/lastIndexOf', lastIndexOf);
 router.get('/length', length);
+router.get('/map', map);
 
 module.exports = router;
