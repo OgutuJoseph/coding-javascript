@@ -220,6 +220,19 @@ const indexOf = async (req, res) => {
     
 };
 
+// isArray()
+const isArray = async (req, res) => {
+    // /** Check if an object is an array */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // let result = Array.isArray(fruits);
+
+    /** Check if another datatype is an array */
+    let text = "W3Schools";
+    let result = Array.isArray(text);
+
+    res.status(200).json(result);
+}
+
 module.exports = {
     concat,
     constructor,
@@ -232,5 +245,6 @@ module.exports = {
     findIndex,
     forEach,
     from,
-    indexOf
+    indexOf,
+    isArray
 };
