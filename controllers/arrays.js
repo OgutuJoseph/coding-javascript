@@ -283,6 +283,14 @@ const lastIndexOf = async (req, res) => {
     res.status(200).json(index);
 };
 
+// length
+const length = async (req, res) => {
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let length = fruits.length;
+
+    res.status(200).json(length);
+};
+
 module.exports = {
     concat,
     constructor,
@@ -299,5 +307,6 @@ module.exports = {
     isArray,
     join,
     keys,
-    lastIndexOf
+    lastIndexOf,
+    length
 };
