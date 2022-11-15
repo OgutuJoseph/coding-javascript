@@ -13,7 +13,8 @@ const {
     from,
     indexOf,
     isArray,
-    join
+    join,
+    keys
 } = require('../controllers/arrays');
 
 // concat()
@@ -31,5 +32,6 @@ router.get('/from', from);
 router.get('/indexOf', indexOf);
 router.get('/isArray', isArray);
 router.get('/join', join);
+router.get('/keys', keys);
 
 module.exports = router;

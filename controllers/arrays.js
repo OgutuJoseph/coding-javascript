@@ -245,6 +245,31 @@ const join = async (req, res) => {
     res.status(200).json(text);
 };
 
+// keys()
+const keys = async (req, res) => {
+    /** *******Create an Array Iterator object, containing the keys of the array******* */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // const keys = fruits.keys();
+
+    // let text = "";
+    // for (let x of keys) {
+    //     // console.log('x: ', x);
+    //     text += x + " || ";
+    // };
+
+    /** *******Use the built in Object.keys() Method******* */
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    const keys = Object.keys(fruits);
+
+    let text = "";
+    for (let x of keys) {
+        // console.log('x: ', x);
+        text += x + " || ";
+    }
+
+    res.status(200).json(text);
+};
+
 module.exports = {
     concat,
     constructor,
@@ -259,5 +284,6 @@ module.exports = {
     from,
     indexOf,
     isArray,
-    join
+    join,
+    keys
 };
