@@ -9,7 +9,8 @@ const {
     filter,
     find,
     findIndex,
-    forEach
+    forEach,
+    from
 } = require('../controllers/arrays');
 
 // concat()
@@ -23,5 +24,6 @@ router.get('/filter', filter);
 router.get('/find', find);
 router.get('/findIndex', findIndex);
 router.get('/forEach', forEach)
+router.get('/from', from)
 
 module.exports = router;

@@ -193,6 +193,15 @@ const forEach = async (req, res) => {
     res.status(200).json(numbers);
 };
 
+// from()
+const from = async (req, res) => {
+    /** Create an array from a string */
+    let text = "ABCDEFG"
+    const myArr = Array.from(text)
+
+    res.status(200).json(myArr);
+}
+
 module.exports = {
     concat,
     constructor,
@@ -203,5 +212,6 @@ module.exports = {
     filter,
     find,
     findIndex,
-    forEach
+    forEach,
+    from
 };
