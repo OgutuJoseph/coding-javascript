@@ -200,7 +200,25 @@ const from = async (req, res) => {
     const myArr = Array.from(text)
 
     res.status(200).json(myArr);
-}
+};
+
+// indexOf()
+const indexOf = async (req, res) => {
+    /** The indexOf() method returns -1 if the value is not found.
+    The indexOf() method starts at a specified index and searches from left to right. **/
+
+    /** Find the first index of "Apple" */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // let index = fruits.indexOf("Apple");
+
+    /** Start at index 3 */
+    const fruits = ["Banana", "Orange", "Apple", "Mango", "Applerrr"];
+    let index = fruits.indexOf("Apple", 3);
+
+    res.status(200).json(index);
+
+    
+};
 
 module.exports = {
     concat,
@@ -213,5 +231,6 @@ module.exports = {
     find,
     findIndex,
     forEach,
-    from
+    from,
+    indexOf
 };
