@@ -231,7 +231,19 @@ const isArray = async (req, res) => {
     let result = Array.isArray(text);
 
     res.status(200).json(result);
-}
+};
+
+// join()
+const join = async (req, res) => {
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // let text = fruits.join();
+
+    /** Another separator */
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let text = fruits.join(" and ");
+
+    res.status(200).json(text);
+};
 
 module.exports = {
     concat,
@@ -246,5 +258,6 @@ module.exports = {
     forEach,
     from,
     indexOf,
-    isArray
+    isArray,
+    join
 };
