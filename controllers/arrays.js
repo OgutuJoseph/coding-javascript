@@ -270,6 +270,19 @@ const keys = async (req, res) => {
     res.status(200).json(text);
 };
 
+// lastIndexOf()
+const lastIndexOf = async (req, res) => {
+    /** Find the last index of "Apple" */
+    // const fruits = ["Apple", "Orange", "Apple", "Mango"];
+    // let index = fruits.lastIndexOf("Apple");
+
+    /** More than one apple */
+    const fruits = ["Orange", "Apple", "Mango", "Apple", "Banana", "Apple"];
+    let index = fruits.lastIndexOf("Apple");
+
+    res.status(200).json(index);
+};
+
 module.exports = {
     concat,
     constructor,
@@ -285,5 +298,6 @@ module.exports = {
     indexOf,
     isArray,
     join,
-    keys
+    keys,
+    lastIndexOf
 };
