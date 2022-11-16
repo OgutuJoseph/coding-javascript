@@ -308,6 +308,20 @@ const map = async (req, res) => {
     res.status(200).json(newArr);
 };
 
+// pop()
+const pop = async (req, res) => {
+    /** Remove (pop) the last element */
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    /** to get the value removed */
+    // const check = fruits.pop();
+    // console.log('check: ', check);
+
+    fruits.pop();
+    res.status(200).json(fruits);
+};
+
+// 
+
 module.exports = {
     concat,
     constructor,
@@ -326,5 +340,6 @@ module.exports = {
     keys,
     lastIndexOf,
     length,
-    map
+    map,
+    pop
 };
