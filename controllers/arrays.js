@@ -367,6 +367,32 @@ const push = async (req, res) => {
     res.status(200).json(fruits);
 };
 
+// reduce()
+const reduce = async (req, res) => {
+    /** Subtract all numbers in an array */
+    const numbers = [175, 50, 25];
+
+    const sumWithInitial = numbers.reduce(
+        (previousValue, currentValue) => previousValue - currentValue,
+    );
+    res.status(200).json(sumWithInitial)
+
+
+};
+
+/**
+reduceRight()
+reverse()
+shift()
+slice()
+some()
+sort()
+splice()
+toString()
+unshift()
+valueOf()
+ */
+
 module.exports = {
     concat,
     constructor,
@@ -388,5 +414,6 @@ module.exports = {
     map,
     pop,
     prototype,
-    push
+    push,
+    reduce
 };

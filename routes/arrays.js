@@ -20,7 +20,8 @@ const {
     map,
     pop,
     prototype,
-    push
+    push,
+    reduce
 } = require('../controllers/arrays');
 
 // concat()
@@ -44,6 +45,7 @@ router.get('/length', length);
 router.get('/map', map);
 router.get('/pop', pop);
 router.get('/prototype', prototype);
-router.get('/push',push);
+router.get('/push', push);
+router.get('/reduce', reduce)
 
 module.exports = router;
