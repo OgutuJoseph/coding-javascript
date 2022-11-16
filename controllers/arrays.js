@@ -193,6 +193,135 @@ const forEach = async (req, res) => {
     res.status(200).json(numbers);
 };
 
+// from()
+const from = async (req, res) => {
+    /** Create an array from a string */
+    let text = "ABCDEFG"
+    const myArr = Array.from(text)
+
+    res.status(200).json(myArr);
+};
+
+// indexOf()
+const indexOf = async (req, res) => {
+    /** The indexOf() method returns -1 if the value is not found.
+    The indexOf() method starts at a specified index and searches from left to right. **/
+
+    /** Find the first index of "Apple" */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // let index = fruits.indexOf("Apple");
+
+    /** Start at index 3 */
+    const fruits = ["Banana", "Orange", "Apple", "Mango", "Applerrr"];
+    let index = fruits.indexOf("Apple", 3);
+
+    res.status(200).json(index);
+
+    
+};
+
+// isArray()
+const isArray = async (req, res) => {
+    // /** Check if an object is an array */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // let result = Array.isArray(fruits);
+
+    /** Check if another datatype is an array */
+    let text = "W3Schools";
+    let result = Array.isArray(text);
+
+    res.status(200).json(result);
+};
+
+// join()
+const join = async (req, res) => {
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // let text = fruits.join();
+
+    /** Another separator */
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let text = fruits.join(" and ");
+
+    res.status(200).json(text);
+};
+
+// keys()
+const keys = async (req, res) => {
+    /** *******Create an Array Iterator object, containing the keys of the array******* */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // const keys = fruits.keys();
+
+    // let text = "";
+    // for (let x of keys) {
+    //     // console.log('x: ', x);
+    //     text += x + " || ";
+    // };
+
+    /** *******Use the built in Object.keys() Method******* */
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    const keys = Object.keys(fruits);
+
+    let text = "";
+    for (let x of keys) {
+        // console.log('x: ', x);
+        text += x + " || ";
+    }
+
+    res.status(200).json(text);
+};
+
+// lastIndexOf()
+const lastIndexOf = async (req, res) => {
+    /** Find the last index of "Apple" */
+    // const fruits = ["Apple", "Orange", "Apple", "Mango"];
+    // let index = fruits.lastIndexOf("Apple");
+
+    /** More than one apple */
+    const fruits = ["Orange", "Apple", "Mango", "Apple", "Banana", "Apple"];
+    let index = fruits.lastIndexOf("Apple");
+
+    res.status(200).json(index);
+};
+
+// length
+const length = async (req, res) => {
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    let length = fruits.length;
+
+    res.status(200).json(length);
+};
+
+// map()
+const map = async (req, res) => {
+    /** Return a new array with the square root of all element values */
+    // const numbers = [4, 9, 16, 25];
+    // const newArr = numbers.map(Math.sqrt);
+    // res.status(200).json(newArr);
+    
+    /** Multiply all the values in an array with 10 */
+    const numbers = [65, 44, 12, 4];
+
+    const myFunction = (num) => {
+        return num * 10;
+    }
+    const newArr = numbers.map(myFunction)
+    res.status(200).json(newArr);
+};
+
+// pop()
+const pop = async (req, res) => {
+    /** Remove (pop) the last element */
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    /** to get the value removed */
+    // const check = fruits.pop();
+    // console.log('check: ', check);
+
+    fruits.pop();
+    res.status(200).json(fruits);
+};
+
+// 
+
 module.exports = {
     concat,
     constructor,
@@ -203,5 +332,14 @@ module.exports = {
     filter,
     find,
     findIndex,
-    forEach
+    forEach,
+    from,
+    indexOf,
+    isArray,
+    join,
+    keys,
+    lastIndexOf,
+    length,
+    map,
+    pop
 };
