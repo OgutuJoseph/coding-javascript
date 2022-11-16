@@ -18,7 +18,8 @@ const {
     lastIndexOf,
     length,
     map,
-    pop
+    pop,
+    prototype
 } = require('../controllers/arrays');
 
 // concat()
@@ -41,5 +42,6 @@ router.get('/lastIndexOf', lastIndexOf);
 router.get('/length', length);
 router.get('/map', map);
 router.get('/pop', pop);
+router.get('/prototype', prototype);
 
 module.exports = router;
