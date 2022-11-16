@@ -354,7 +354,18 @@ const prototype = async (req, res) => {
     res.status(200).json(outcome);
 };
 
+// push()
+const push = async (req, res) => {
+    /** Add a new item to an array */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // fruits.push("Kiwi");
 
+    /** Add two new items to the array */
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.push("Kiwi", "Lemon");
+
+    res.status(200).json(fruits);
+};
 
 module.exports = {
     concat,
@@ -377,4 +388,5 @@ module.exports = {
     map,
     pop,
     prototype,
+    push
 };
