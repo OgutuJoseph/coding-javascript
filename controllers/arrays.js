@@ -320,7 +320,78 @@ const pop = async (req, res) => {
     res.status(200).json(fruits);
 };
 
-// 
+// prototype
+const prototype = async (req, res) => {
+    /** Create a method that transforms array values into upper case */
+    // Array.prototype.myUcase = function() {
+    //     for (let i = 0; i < this.length; i++) {
+    //         this[i] = this[i].toUpperCase();
+    //     }
+    // };
+    // // use the method on any array
+    // var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // fruits.myUcase();
+
+    // res.status(200).json(result);
+
+
+    /** Add new properties to objects */
+    function Person(first, last, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.eyeColor = eye;
+    }
+    const myFather = new Person("John", "Doe", "blue");
+    const myMother = new Person("Sally", "Rally", "green");
+
+    Person.prototype.nationality = "English";
+
+    const outcome = {
+        father: "My father's first name is " + myFather.firstName + ", last name is " + myFather.lastName + ", eye color " + myFather.eyeColor + " and nationality " + myFather.nationality,
+        mother: "My mother's first name is " + myMother.firstName + ", last name is " + myMother.lastName + ", eye color " + myMother.eyeColor + " and nationality " + myMother.nationality,
+    }
+
+    res.status(200).json(outcome);
+};
+
+// push()
+const push = async (req, res) => {
+    /** Add a new item to an array */
+    // const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    // fruits.push("Kiwi");
+
+    /** Add two new items to the array */
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.push("Kiwi", "Lemon");
+
+    res.status(200).json(fruits);
+};
+
+// reduce()
+const reduce = async (req, res) => {
+    /** Subtract all numbers in an array */
+    const numbers = [175, 50, 25];
+
+    const sumWithInitial = numbers.reduce(
+        (previousValue, currentValue) => previousValue - currentValue,
+    );
+    res.status(200).json(sumWithInitial)
+
+
+};
+
+/**
+reduceRight()
+reverse()
+shift()
+slice()
+some()
+sort()
+splice()
+toString()
+unshift()
+valueOf()
+ */
 
 module.exports = {
     concat,
@@ -341,5 +412,8 @@ module.exports = {
     lastIndexOf,
     length,
     map,
-    pop
+    pop,
+    prototype,
+    push,
+    reduce
 };
